@@ -16,7 +16,7 @@ function App() {
     <>
      <Router>
       <Routes>
-        <Route path='/register' element={<Register/>}/>
+        <Route path='/' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/navbar' element={<Navbar/>}/>
         <Route path='/productform' element={<ProductForm/>}/>

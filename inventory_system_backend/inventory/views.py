@@ -151,3 +151,17 @@ def remove_stock(request):
         return Response({"error": "Product not found"}, status=status.HTTP_404_NOT_FOUND)
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class CustomerLogout(APIView):
+     def post(self, request):
+         
+        data1 = request.data
+        print(f"Outer parsed data****: {data1}")
+        session_key = data1.get('sessionKey')
+        print(f"session_key: {session_key}")
+        if not session_key:
+            return Response({'error': 'Session key not provided'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        request.session.flush()    
+        return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
+       

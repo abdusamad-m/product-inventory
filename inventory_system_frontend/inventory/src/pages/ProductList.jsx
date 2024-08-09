@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './Navbar';
+
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
@@ -26,6 +28,8 @@ const ProductList = () => {
     if (error) return <p>{error}</p>;
 
     return (
+        <>
+        <Navbar/>
         <div className="container mt-5">
             <h2 className="text-center mb-4">Product List</h2>
             <div className="row">
@@ -62,6 +66,7 @@ const ProductList = () => {
                 ))}
             </div>
         </div>
+        </>
     );
 };
 

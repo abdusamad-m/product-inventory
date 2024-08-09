@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './Navbar';
+
 
 const StockManager = () => {
     const [productID, setProductID] = useState('');
@@ -28,6 +30,8 @@ const StockManager = () => {
     };
 
     return (
+        <>
+        <Navbar/>
         <div className="container mt-5">
             <h2 className="text-center mb-4">Manage Stock</h2>
             {message && <div className="alert alert-success text-center">{message}</div>}
@@ -79,6 +83,7 @@ const StockManager = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
